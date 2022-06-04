@@ -1,0 +1,968 @@
+@prefix course: <https://informatika.unpad.ac.id/course#> .
+@prefix lecturer:  <https://informatika.unpad.ac.id/lecturer#> .
+@prefix data:  <https://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+##KELAS
+data:class1 rdf:type data:Class;
+    data:name "A & B".
+
+data:class2 rdf:type data:Class;
+    data:name "A".
+
+data:class3 rdf:type data:Class;
+    data:name "B".
+
+##TIPE MATA KULIAH
+data:ct1 rdf:type data:CourseType;
+    data:name "Wajib";
+    data:field "Umum";
+    data:abbreviation "Umum".
+
+data:ct2 rdf:type data:CourseType;
+    data:name "Peminatan";
+    data:field "Sistem Informasi dan Sistem Multimedia";
+    data:abbreviation "SISM".
+
+data:ct3 rdf:type data:CourseType;
+    data:name "Peminatan";
+    data:field "Sistem Cerdas dan Sistem Grafika";
+    data:abbreviation "SCSG".
+
+data:ct4 rdf:type data:CourseType;
+    data:name "Peminatan";
+    data:field "Jaringan Komputer dan Komunikasi Data";
+    data:abbreviation "JKKD".
+
+##MATA KULIAH
+#SEMESTER 1
+course:w11 rdf:type data:Course;
+    data:name "Agama";
+    data:code "UNX10.1001";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:tpb1
+    ] .
+
+course:w12 rdf:type data:Course;
+    data:name "Pancasila";
+    data:code "UNX10.1002";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:tpb2
+    ] .
+
+course:w13 rdf:type data:Course;
+    data:name "Bahasa Indonesia";
+    data:code "UNX10.1003";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:tpb3
+    ] .
+
+course:w14 rdf:type data:Course;
+    data:name "Olah Raga, Kebugaran dan Kreatifitas";
+    data:abbreviation "OKK";
+    data:code "UNX10.1004";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:tpb4
+    ] .
+
+course:w15 rdf:type data:Course;
+    data:name "Kalkulus I";
+    data:code "D10A.0400101";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:n2
+    ] .
+
+course:w16 rdf:type data:Course;
+    data:name "Logika Informatika";
+    data:abbreviation "Logif";
+    data:code "D10K-1002";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti6
+    ] .
+
+course:w17 rdf:type data:Course;
+    data:name "Algoritma & Pemrograman";
+    data:abbreviation "Alprog";
+    data:code "D10K-1003";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class2 lecturer:ti13;
+        data:class3 lecturer:ti14
+    ] .
+
+course:w18 rdf:type data:Course;
+    data:name "Pengantar Teknologi Komputer & Informatika";
+    data:abbreviation "PTIK";
+    data:code "D10G.1203";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class2 lecturer:ti14;
+        data:class3 lecturer:ti5
+    ] .
+
+course:w19 rdf:type data:Course;
+    data:name "Bahasa Inggris I";
+    data:code "UNX10.2001";
+    data:type data:ct1;
+    data:semester 1;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:tpb5
+    ] .
+
+#SEMESTER 2
+course:w21 rdf:type data:Course;
+    data:name "Kewarganegaraan";
+    data:abbreviation "KWN";
+    data:code "UNX10.2002";
+    data:type data:ct1;
+    data:semester 2;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:n19
+    ] .
+
+course:w22 rdf:type data:Course;
+    data:name "Kalkulus II";
+    data:code "D10A.2201";
+    data:type data:ct1;
+    data:semester 2;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w15;
+    data:lecturer [
+        data:class2 lecturer:n12;
+        data:class3 lecturer:n2
+    ] .
+
+course:w23 rdf:type data:Course;
+    data:name "Fisika Informatika";
+    data:code "D10H.2201";
+    data:type data:ct1;
+    data:semester 2;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class2 lecturer:n15, lecturer:n16;
+        data:class3 lecturer:n10, lecturer:n11
+    ] .
+
+course:w24 rdf:type data:Course;
+    data:name "Statistika";
+    data:code "D10E.2201";
+    data:type data:ct1;
+    data:semester 2;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:n20
+    ] .
+
+course:w25 rdf:type data:Course;
+    data:name "Struktur data";
+    data:abbreviation "Strukdat";
+    data:code "D10G.2201";
+    data:type data:ct1;
+    data:semester 2;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w17;
+    data:lecturer [
+        data:class2 lecturer:ti8;
+        data:class3 lecturer:ti15
+    ] .
+
+course:w26 rdf:type data:Course;
+    data:name "Arsitektur & Organisasi Komputer";
+    data:abbreviation "Orarkom";
+    data:code "D10G.2202";
+    data:type data:ct1;
+    data:semester 2;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti6
+    ] .
+
+course:w27 rdf:type data:Course;
+    data:name "Sistem database I";
+    data:abbreviation "Sisdat 1";
+    data:code "D10G.2203";
+    data:type data:ct1;
+    data:semester 2;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti4
+    ] .
+
+#SEMESTER 3
+course:w31 rdf:type data:Course;
+    data:name "Aljabar Linier";
+    data:abbreviation "Alin";
+    data:code "D10A.0400302";
+    data:type data:ct1;
+    data:semester 3;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:n4
+    ] .
+
+course:w32 rdf:type data:Course; 
+    data:name "Metode Numerik";
+    data:abbreviation "Metnum";
+    data:code "D10A.0400303";
+    data:type data:ct1;
+    data:semester 3;
+    data:curriculum 2016;
+    data:sks 3;
+    data:lecturer [
+        data:class2 lecturer:ti6;
+        data:class3 lecturer:ti15
+    ] .
+
+course:w33 rdf:type data:Course;
+    data:name "Matematika diskrit";
+    data:abbreviation "Matdis";
+    data:code "D10A.3203";
+    data:type data:ct1;
+    data:semester 3;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti3
+    ] .
+
+course:w34 rdf:type data:Course;
+    data:name "Sistem Operasi";
+    data:abbreviation "Sisop";
+    data:code "D10K-3001";
+    data:type data:ct1;
+    data:semester 3;
+    data:curriculum 2016;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti11, lecturer:n7
+    ] .
+
+course:w35 rdf:type data:Course;
+    data:name "Pemrograman Web";
+    data:abbreviation "Pemweb";
+    data:code "D10K-3003";
+    data:type data:ct1;
+    data:semester 3;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w25;
+    data:lecturer [
+        data:class1 lecturer:ti11
+    ] .
+
+course:w36 rdf:type data:Course;
+    data:name "Pemrograman Berorientasi Objek";
+    data:abbreviation "PBO";
+    data:code "D10K-3002";
+    data:type data:ct1;
+    data:semester 3;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w25;
+    data:lecturer [
+        data:class1 lecturer:ti8
+    ] .
+
+course:w37 rdf:type data:Course;
+    data:name "Sistem database II";
+    data:abbreviation "Sisdat 2";
+    data:code "D10K.0400305";
+    data:type data:ct1;
+    data:semester 3;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w27;
+    data:lecturer [
+        data:class1 lecturer:ti4
+    ] .
+
+#SEMESTER 4
+course:w41 rdf:type data:Course;
+    data:name "Bahasa Inggris II";
+    data:code "UNX10.4001";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:n13
+    ] .
+
+course:w42 rdf:type data:Course;
+    data:name "Operasional Riset";
+    data:abbreviation "Opris";
+    data:code "D10A.4201";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class2 lecturer:n17;
+        data:class3 lecturer:n18
+    ] .
+
+course:w43 rdf:type data:Course;
+    data:name "Artificial Intelligence";
+    data:abbreviation "AI";
+    data:code "D10G.4201";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti5
+    ] .
+
+course:w44 rdf:type data:Course;
+    data:name "Jaringan Komputer";
+    data:abbreviation "Jarkom";
+    data:code "D10G.4202";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti13, lecturer:n5
+    ] .
+
+course:w45 rdf:type data:Course;
+    data:name "Sistem Informasi";
+    data:abbreviation "SI";
+    data:code "D10G.4203";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti1
+    ] .
+
+course:w46 rdf:type data:Course;
+    data:name "Kecapakan Antar Personal";
+    data:abbreviation "KAP";
+    data:code "D10G.4204";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2016;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:n8
+    ] .
+
+course:w47 rdf:type data:Course;
+    data:name "Analisis Algoritma";
+    data:abbreviation "Analgo";
+    data:code "D10G.4205";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w25;
+    data:lecturer [
+        data:class1 lecturer:ti7
+    ] .
+
+course:w48 rdf:type data:Course;
+    data:name "Etika Profesi";
+    data:abbreviation "Etprof";
+    data:code "D10G.4206";
+    data:type data:ct1;
+    data:semester 4;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:ti1
+    ] .
+
+#SEMESTER 5
+course:w51 rdf:type data:Course;
+    data:name "Telematika";
+    data:code "D10K-5002";
+    data:type data:ct1;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w44;
+    data:lecturer [
+        data:class1 lecturer:ti10
+    ] .
+
+course:w52 rdf:type data:Course;
+    data:name "Enterpreneurship";
+    data:abbreviation "Entre";
+    data:code "D10K-5003";
+    data:type data:ct1;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:ti7
+    ] .
+
+course:w53 rdf:type data:Course;
+    data:name "Rekayasa Perangkat Lunak";
+    data:abbreviation "RPL";
+    data:code "D10K-5004";
+    data:type data:ct1;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w45;
+    data:lecturer [
+        data:class1 lecturer:ti7
+    ] .
+
+course:w54 rdf:type data:Course;
+    data:name "Metodologi Penelitian";
+    data:abbreviation "Metpen";
+    data:code "D10A.0400403";
+    data:type data:ct1;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class2 lecturer:ti2;
+        data:class3 lecturer:ti1
+    ] .
+
+#SEMESTER 6
+course:w61 rdf:type data:Course;
+    data:name "Interaksi Manusia & Komputer";
+    data:abbreviation "IMK";
+    data:code "D10G.6201";
+    data:type data:ct1;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 2;
+    data:prerequisite course:w44;
+    data:lecturer [
+        data:class1 lecturer:ti2;
+        data:class2 lecturer:n14;
+        data:class3 lecturer:n7
+    ] .
+
+course:w62 rdf:type data:Course;
+    data:name "Teori Bahasa & Automata";
+    data:abbreviation "TBA";
+    data:code "D10G.6202";
+    data:type data:ct1;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti11
+    ] .
+
+course:w63 rdf:type data:Course;
+    data:name "Proyek Perangkat Lunak I";
+    data:abbreviation "PPL 1";
+    data:code "D10G.6203";
+    data:type data:ct1;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:ti8
+    ] .
+
+course:w64 rdf:type data:Course;
+    data:name "Data Warehouse";
+    data:abbreviation "Datware";
+    data:code "D10G.6204";
+    data:type data:ct1;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 2;
+    data:prerequisite course:w37;
+    data:lecturer [
+        data:class1 lecturer:ti15
+    ] .
+
+#SEMESTER 7
+course:w71 rdf:type data:Course;
+    data:name "Data Mining";
+    data:abbreviation "Datmin";
+    data:code "D10K-7B02";
+    data:type data:ct1;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 3;
+    data:prerequisite course:w64;
+    data:lecturer [
+        data:class1 lecturer:ti12, lecturer:ti15
+    ] .
+
+course:w72 rdf:type data:Course;
+    data:name "Proyek Perangkat Lunak II";
+    data:abbreviation "PPL 2";
+    data:code "D10G.7202";
+    data:type data:ct1;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:ti13, lecturer:ti14
+    ] .
+
+course:w73 rdf:type data:Course;
+    data:name "Manajemen Project";
+    data:abbreviation "Manpro";
+    data:code "D10K-7D02";
+    data:type data:ct1;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 2;
+    data:lecturer [
+        data:class1 lecturer:n6
+    ] .
+
+course:w74 rdf:type data:Course;
+    data:name "KKN - Magang";
+    data:code "UNX10.7001/02";
+    data:type data:ct1;
+    data:semester 7;
+    data:curriculum 2017;
+    data:sks 2.
+
+#SEMESTER 8
+course:w81 rdf:type data:Course;
+    data:name "Seminar";
+    data:code "UNX10.8001";
+    data:type data:ct1;
+    data:semester 8;
+    data:curriculum 2017;
+    data:sks 1.
+
+course:w82 rdf:type data:Course;
+    data:name "Tugas Akhir";
+    data:abbreviation "TA";
+    data:code "UNX10.8002";
+    data:type data:ct1;
+    data:semester 8;
+    data:curriculum 2017;
+    data:sks 7.
+
+#SISM
+course:s51 rdf:type data:Course;
+    data:name "Decision Support Systems";
+    data:abbreviation "DSS";
+    data:code "D10K-5B01";
+    data:type data:ct2;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti12
+    ] .
+
+course:s52 rdf:type data:Course;
+    data:name "Kriptografi";
+    data:code "D10K-5B02";
+    data:type data:ct2;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti3, lecturer:n5
+    ] .
+
+course:s61 rdf:type data:Course;
+    data:name "Sistem Informasi Multimedia";
+    data:abbreviation "SIM";
+    data:code "D10G.62B1";
+    data:type data:ct2;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w45;
+    data:lecturer [
+        data:class1 lecturer:ti5
+    ] .
+
+course:s62 rdf:type data:Course;
+    data:name "Semantik Web";
+    data:abbreviation "Semweb";
+    data:code "D10G.62B2";
+    data:type data:ct2;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w36;
+    data:lecturer [
+        data:class1 lecturer:ti13
+    ] .
+
+course:s71 rdf:type data:Course;
+    data:name "Kapita Selekta SISM";
+    data:code "D10K-7B01";
+    data:type data:ct2;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:n1
+    ] .
+
+course:s72 rdf:type data:Course;
+    data:name "Sistem Informasi Geografi";
+    data:abbreviation "SIG";
+    data:code "D10G.72B2";
+    data:type data:ct2;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 3;
+    data:prerequisite course:w45;
+    data:lecturer [
+        data:class1 lecturer:ti1
+    ] .
+
+#SCSG
+course:a51 rdf:type data:Course;
+    data:name "Grafika Komputer";
+    data:abbreviation "Grafkom";
+    data:code "D10K-5C01";
+    data:type data:ct3;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w31;
+    data:lecturer [
+        data:class1 lecturer:ti2, lecturer:n9
+    ] .
+
+course:a52 rdf:type data:Course;
+    data:name "Robotika";
+    data:code "D10K-5C02";
+    data:type data:ct3;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w43;
+    data:lecturer [
+        data:class1 lecturer:ti5
+    ] .
+
+course:a61 rdf:type data:Course;
+    data:name "Pengolahan & Analisis Citra Digital";
+    data:abbreviation "PACD";
+    data:code "D10G.62C1";
+    data:type data:ct3;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:a51;
+    data:lecturer [
+        data:class1 lecturer:ti2, lecturer:n9
+    ] .
+
+course:a62 rdf:type data:Course;
+    data:name "Soft Computing";
+    data:abbreviation "Softcom";
+    data:code "D10G.62C2";
+    data:type data:ct3;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:a52;
+    data:lecturer [
+        data:class1 lecturer:ti3, lecturer:ti12
+    ] .
+
+course:a71 rdf:type data:Course;
+    data:name "Kapita Selekta SCSG";
+    data:code "D10K-7D01";
+    data:type data:ct3;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti5
+    ] .
+
+course:a72 rdf:type data:Course;
+    data:name "Machine Learning";
+    data:abbreviation "ML";
+    data:code "D10G.72C2";
+    data:type data:ct3;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti12, lecturer:ti15
+    ] .
+
+#JKKD
+course:j51 rdf:type data:Course;
+    data:name "Sistem Keamanan Jaringan";
+    data:abbreviation "SKJ";
+    data:code "D10K-5D01";
+    data:type data:ct4;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w44;
+    data:lecturer [
+        data:class1 lecturer:ti10
+    ] .
+
+course:j52 rdf:type data:Course;
+    data:name "Sistem Terdistribusi";
+    data:abbreviation "Sister";
+    data:code "D10K-5D02";
+    data:type data:ct4;
+    data:semester 5;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w34;
+    data:lecturer [
+        data:class1 lecturer:n1
+    ] .
+
+course:j61 rdf:type data:Course;
+    data:name "Manajemen Jaringan";
+    data:abbreviation "Manjar";
+    data:code "D10G.62D1";
+    data:type data:ct4;
+    data:semester 6;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:w44;
+    data:lecturer [
+        data:class1 lecturer:ti10
+    ] .
+
+course:j62 rdf:type data:Course;
+    data:name "Jaringan Komputer Lanjut";
+    data:abbreviation "JKL";
+    data:code "D10G.72D2";
+    data:type data:ct3;
+    data:semester 7;
+    data:curriculum 2017;
+    data:sks 3;
+    data:prerequisite course:j61;
+    data:lecturer [
+        data:class1 lecturer:ti10
+    ] .
+
+course:j71 rdf:type data:Course;
+    data:name "Kapita Selekta JKKD";
+    data:code "D10K-7C01";
+    data:type data:ct4;
+    data:semester 7;
+    data:curriculum 2016;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti13
+    ] .
+
+
+course:j72 rdf:type data:Course;
+    data:name "Mobile Computing";
+    data:abbreviation "Mobcom";
+    data:code "D10K.0407D02";
+    data:type data:ct4;
+    data:semester 6;
+    data:curriculum 2016;
+    data:sks 3;
+    data:lecturer [
+        data:class1 lecturer:ti13
+    ] .
+
+## DOSEN
+#TPB
+lecturer:tpb1 rdf:type data:Lecturer;
+    data:name "Tim Dosen Agama Fakultas".
+
+lecturer:tpb2 rdf:type data:Lecturer;
+    data:name "Tim Dosen Pancasila Fakultas".
+
+lecturer:tpb3 rdf:type data:Lecturer;
+    data:name "Tim Dosen Bahasa Indonesia Fakultas".
+
+lecturer:tpb4 rdf:type data:Lecturer;
+    data:name "Tim TPB Pusat".
+
+lecturer:tpb5 rdf:type data:Lecturer;
+    data:name "Tim Dosen Bahasa Inggris Fakultas".
+
+#TI
+lecturer:ti1 rdf:type data:Lecturer;
+    data:name "Prof. Dr. Atje Setiawan A.,M.S, M.Kom.";
+    data:nidn "0017125402".
+
+lecturer:ti2 rdf:type data:Lecturer;
+    data:name "Dr. Setiawan Hadi, M.Sc.CS.";
+    data:nidn "0001076210".
+
+lecturer:ti3 rdf:type data:Lecturer;
+    data:name "Drs. Akik Hidayat, M.Kom.";
+    data:nidn "0018106103".
+
+lecturer:ti4 rdf:type data:Lecturer;
+    data:name "Dr. Juli Rejito, M.Kom.";
+    data:nidn "0017076801".
+
+lecturer:ti5 rdf:type data:Lecturer;
+    data:name "Dr. Asep Sholahuddin, M.T.";
+    data:nidn "0003046705".
+
+lecturer:ti6 rdf:type data:Lecturer;
+    data:name "Drs. Ino Suryana, M.Kom.";
+    data:nidn "0015016002".
+
+lecturer:ti7 rdf:type data:Lecturer;
+    data:name "Drs. R. Sudrajat, M.Kom.";
+    data:nidn "0012026002".
+
+lecturer:ti8 rdf:type data:Lecturer;
+    data:name "Akmal, S.Si., M.T.";
+    data:nidn "0015067001".
+
+lecturer:ti9 rdf:type data:Lecturer;
+    data:name "Erick Paulus, S.Si., M.Kom.";
+    data:nidn "0018038203".
+
+lecturer:ti10 rdf:type data:Lecturer;
+    data:name "Deni Setiana,S.Si., M.CS.";
+    data:nidn "0025097304".
+
+lecturer:ti11 rdf:type data:Lecturer;
+    data:name "Rudi Rosadi, S.Si., M.Kom.";
+    data:nidn "0023077606".
+
+lecturer:ti12 rdf:type data:Lecturer;
+    data:name "Dr. Intan Nurma Yulita, MT";
+    data:nidn "0404078502".
+
+lecturer:ti13 rdf:type data:Lecturer;
+    data:name "Aditya Pradana, S.T., M.Eng.";
+    data:nidn "0011128405".
+
+lecturer:ti14 rdf:type data:Lecturer;
+    data:name "Mira Suryani, S.Pd., M.Kom.";
+    data:nidn "0030128901".
+
+lecturer:ti15 rdf:type data:Lecturer;
+    data:name "Dr. Afrida Helen, M.T.";
+    data:nidn "0028016505".
+
+#non TI
+lecturer:n1 rdf:type data:Lecturer;
+    data:name "Dr. Arief Fatchul Huda";
+    data:nidn "2009067201".
+
+lecturer:n2 rdf:type data:Lecturer;
+    data:name "Dwi Susanti, Dra., M.Si";
+    data:nidn "0029096501".
+
+lecturer:n3 rdf:type data:Lecturer;
+    data:name "Prof. Dr. Rer. Nat Yudi Rosandi";
+    data:nidn "008087106".
+
+lecturer:n4 rdf:type data:Lecturer;
+    data:name "Iin Irianingsih, Dra., M.Stat";
+    data:nidn "0005036202".
+
+lecturer:n5 rdf:type data:Lecturer;
+    data:name "Prof. Dr. Rahmat Budiarto, M.Sc.";
+    data:nidn "0010049303".
+
+lecturer:n6 rdf:type data:Lecturer;
+    data:name "Monika Hidayanti, S.SI., MT";
+    data:nidn "0011017103".
+
+lecturer:n7 rdf:type data:Lecturer;
+    data:name "Rahmatullah Arrizal P, S.Kom, MT.".
+
+lecturer:n8 rdf:type data:Lecturer;
+    data:name "Retasari Dewi, S.I.Kom., M.I.Kom";
+    data:nidn "0006038604".
+
+lecturer:n9 rdf:type data:Lecturer;
+    data:name "Prof. Dr. Anton Satrio Prabuwono";
+    data:nidn "0312127303".
+
+lecturer:n10 rdf:type data:Lecturer;
+    data:name "Sri Suryaningsih, Dra.,M.I.L";
+    data:nidn "9990063570".
+
+lecturer:n11 rdf:type data:Lecturer;
+    data:name "Setianto, M.Si";
+    data:nidn "0004087301".
+
+lecturer:n12 rdf:type data:Lecturer;
+    data:name "Drs. Eddy Djauhari, MM.";
+    data:nidn "0021125701".
+
+lecturer:n13 rdf:type data:Lecturer;
+    data:name "Dr. Dianne Amor K, M.Pd.";
+    data:nidn "0031037404".
+
+lecturer:n14 rdf:type data:Lecturer;
+    data:name "Firas Atqiya, M.Si., M.Sc";
+    data:nidn "0418119001".
+
+lecturer:n15 rdf:type data:Lecturer;
+    data:name "Norman Syakir, Drs., M.Sc";
+    data:nidn "0018065907".
+
+lecturer:n16 rdf:type data:Lecturer;
+    data:name "Dr. Budi Adiperdana, M.Si";
+    data:nidn "0017058206".
+
+lecturer:n17 rdf:type data:Lecturer;
+    data:name "Elis Hertini, Dra, M.Si";
+    data:nidn "0022055808".
+
+lecturer:n18 rdf:type data:Lecturer;
+    data:name "Julita Nahar, Dra., MT";
+    data:nidn "0018076501".
+
+lecturer:n19 rdf:type data:Lecturer;
+    data:name "Nurullia Fitriani";
+    data:nidn "0023047907".
+
+lecturer:n20 rdf:type data:Lecturer;
+    data:name "Yuyun Hidayat, MS., Ph.D";
+    data:nidn "0013056002".

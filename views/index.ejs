@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        <%= title %>
+    </title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- font-awesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/b-print-2.2.3/fh-3.2.3/kt-2.7.0/r-2.3.0/sp-2.0.1/sl-1.4.0/datatables.min.css" />
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-html5-2.2.3/b-print-2.2.3/fh-3.2.3/kt-2.7.0/r-2.3.0/sp-2.0.1/sl-1.4.0/datatables.min.js"></script>
+</head>
+<!-- End Header -->
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-info">
+        <div class="container-fluid">
+            <!-- <span class="navbar-brand mb-0 h1 text-light">Semantic Web</span> -->
+            <a class="navbar-brand" href="#">
+                <img src="images/logo-unpad.png" class="me-2" height="20" alt="MDB Logo" loading="lazy" />
+                <small class="text-light">Semantik Web</small>
+            </a>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Container -->
+    <div class="container" style="max-width: 90%">
+
+        <!-- <div class="row justify-content-center">
+      <img src="images/logo-unpad.png" alt="Logo Unpad" style="width: 25%; margin:auto">
+    </div> -->
+        <br>
+        <div class="row">
+            <h3 class="text-center">PORTAL MATA KULIAH TEKNIK INFORMATIKA UNPAD</h3>
+        </div>
+        <br>
+
+        <div class="row justify-content-center">
+            <table id="dt-main" class="table table-bordered table-hover table-responsive">
+                <thead class="table-primary">
+                    <tr>
+                        <th class="th-sm">
+                                <!-- <button id="expand-child">
+                                    <span>
+                                    <i class="fa fa-solid fa-chevrons-down"></i>
+                                </span>
+                            </button> -->
+                            <button id="expand-child" type="button" class="btn btn-primary btn-sm btn-floating">
+                                <i class="fa fa-chevron-circle-up"></i>
+                              </button>
+                            </th>
+                        <th class="th-sm">Nama</th>
+                        <th class="th-sm">Singkatan</th>
+                        <th class="th-sm">Sandi</th>
+                        <th class="th-sm">Jenis</th>
+                        <th class="th-sm">Bidang</th>
+                        <th class="th-sm">Bidang</th>
+                        <th class="th-sm">Semester</th>
+                        <th class="th-sm">Kurikulum</th>
+                        <th class="th-sm">SKS</th>
+                        <th class="th-sm">Prasyarat</th>
+                        <th class="th-sm">Dosen 1</th>
+                        <th class="th-sm">Dosen 2</th>
+                        <th class="th-sm">Dosen 3</th>
+                        <th class="th-sm">Dosen 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach( function(datum) { %>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <%= datum.name %>
+                            </td>
+                            <td>
+                                <%= datum.abbreviation %>
+                            </td>
+                            <td>
+                                <%= datum.code %>
+                            </td>
+                            <td>
+                                <%= datum.type %>
+                            </td>
+                            <td>
+                                <%= datum.field %>
+                            </td>
+                            <td>
+                                <%= datum.field_abbrev %>
+                            </td>
+                            <td>
+                                <%= datum.semester %>
+                            </td>
+                            <td>
+                                <%= datum.curriculum %>
+                            </td>
+                            <td>
+                                <%= datum.sks %>
+                            </td>
+                            <td>
+                                <%= datum.prerequisite %>
+                            </td> 
+                            <% if (datum.lecturer){ %>
+                                <td>
+									[Kelas <%= datum.lecturer.lecturer1.class %>] :
+                                    <span style="padding-left:5px"></span>
+                                    <%= datum.lecturer.lecturer1.name %>
+                                    <span style="padding-left:5px"></span>
+                                    <% if (datum.lecturer.lecturer1.nidn != null){ %>
+                                        (<%= datum.lecturer.lecturer1.nidn %>)
+                                        <% } %>
+                                </td>
+                                <% if (datum.lecturer.lecturer2){ %>
+                                    <td>
+										[Kelas <%= datum.lecturer.lecturer2.class %>] :
+                                        <span style="padding-left:5px"></span>
+                                        <%= datum.lecturer.lecturer2.name %>
+                                        <span style="padding-left:5px"></span>
+                                        <% if (datum.lecturer.lecturer2.nidn != null){ %>
+                                        (<%= datum.lecturer.lecturer2.nidn %>)
+                                        <% } %>
+                                    </td>
+                                    <%} else { %>
+                                        <td></td>
+                                        <% } %>
+                                            <% if (datum.lecturer.lecturer3){ %>
+                                                <td>
+										[Kelas <%= datum.lecturer.lecturer3.class %>] :
+                                        <span style="padding-left:5px"></span>
+										<%= datum.lecturer.lecturer3.name %>
+                                        <span style="padding-left:5px"></span>
+                                        <% if (datum.lecturer.lecturer3.nidn != null){ %>
+                                        (<%= datum.lecturer.lecturer3.nidn %>)
+                                        <% } %>
+                                                </td>
+                                                <%} else { %>
+                                                    <td></td>
+                                                    <% } %>
+                                                        <% if (datum.lecturer.lecturer4){ %>
+                                                            <td>
+															 [Kelas <%= datum.lecturer.lecturer4.class %>] :
+                                                             <span style="padding-left:5px"></span>
+                                                                <%= datum.lecturer.lecturer4.name %>
+                                                                <span style="padding-left:5px"></span>
+                                                                <% if (datum.lecturer.lecturer4.nidn != null){ %>
+                                                            (<%= datum.lecturer.lecturer4.nidn %>)
+                                                            <% } %>
+                                                            </td>
+                                                            <%} else { %>
+                                                                <td></td>
+                                                                <% } %>
+                                                                    <%} else { %>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <% } %>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- Container -->
+    </div>
+    <br></br>
+    <!-- footer -->
+    <footer class="bg-info text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-light" href="https://github.com/bagasadif/">Bagas Adi Firdaus</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+          <!-- footer -->
+
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
